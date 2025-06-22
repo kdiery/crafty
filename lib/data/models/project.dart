@@ -8,7 +8,10 @@ final uuid = Uuid();
 
 enum Craft { knit, crochet }
 
-const craftIcons = {Craft.knit: "knit", Craft.crochet: "crochet"};
+const craftIcons = {
+  Craft.knit: "assets/icons/knit.png",
+  Craft.crochet: "assets/icons/crochet.png",
+};
 
 class Project {
   Project({required this.title, required this.craft})

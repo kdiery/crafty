@@ -7,7 +7,7 @@ class ListViewCustomTest extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('ListView.custom Test')),
+      appBar: AppBar(title: const Text('Craft Projects')),
 
       body: ListView.custom(
         childrenDelegate: SliverChildBuilderDelegate((
@@ -15,9 +15,18 @@ class ListViewCustomTest extends StatelessWidget {
           int index,
         ) {
           return ListTile(
-            leading: CircleAvatar(child: Text(index.toString())),
+            leading: CircleAvatar(
+              radius: 20,
+              backgroundColor: Colors.grey[300],
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: Image.asset(
+                  craftIcons[dummy_projects[index].craft]!,
+                  fit: BoxFit.contain,
+                ),
+              ),
+            ),
             title: Text(dummy_projects[index].title),
-            subtitle: Text(dummy_projects[index].craft.toString()),
           );
         }, childCount: dummy_projects.length),
       ),
